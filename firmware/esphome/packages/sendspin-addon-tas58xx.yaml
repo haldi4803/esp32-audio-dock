@@ -19,15 +19,6 @@ esphome:
         id: external_media_player
         media_url: file://startup_sync_sound
 
-media_source:
-  - platform: file
-    id: file_source
-    files:
-      id: startup_sync_sound
-      file: https://github.com/mrtoy-me/esphome-tas58xx/raw/main/components/tas58xx/silent_boot.flac
-      # For debuging purposes, you can use a sound with audible content
-      # file: https://github.com/mrtoy-me/esphome-tas58xx/raw/main/components/tas58xx/tas58xx_boot.flac
-      
 media_player:
   - id: !extend external_media_player
     sources:
