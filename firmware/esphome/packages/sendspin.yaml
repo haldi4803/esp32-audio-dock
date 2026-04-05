@@ -9,47 +9,10 @@
 # ============================================================
 
 external_components:
-  ## Latest refs are not building at the moment
-  ## so pinning to specific commits that are known to work
-  # - source: github://pr#12253
-  #   components: [ mixer ]
-  #   refresh: 24h
+  - source: github://pr#14933
+    components: [const, generic_image, media_source, sendspin]
+    refresh: 1h
 
-  # - source: github://pr#12254
-  #   components: [ resampler ]
-  #   refresh: 24h
-
-  # - source: github://pr#12256
-  #   components: [ audio ]
-  #   refresh: 24h
-
-  # - source: github://pr#12258
-  #   components: [ media_player ]
-  #   refresh: 24h
-    
-  # - source: github://pr#12284
-  #   components: [ mdns, sendspin ]
-  #   refresh: 24h
-
-  # - source: github://pr#12429
-  #   components: [ file, http_request, media_source, speaker_source ]
-  #   refresh: 24h
-  
-  ## Speciifc commits that are known to produce a working build
-  ## https://github.com/esphome/esphome/pull/12284#issuecomment-3929269125
-  - source:
-      # https://github.com/esphome/esphome/pull/12429
-      type: git
-      url: https://github.com/esphome/esphome
-      ref: a6c403deb7603d316dce2820897902e01c3695cc
-    refresh: 0s
-    components: [ file, http_request, media_source, speaker_source ]
-  - source:
-      # https://github.com/esphome/esphome/pull/12284
-      type: git
-      url: https://github.com/esphome/esphome
-      ref: 119a5c25a483c58b3d58a35c8cec95495c6491c2
-    components: [ sendspin ]
 
   # The following sources are merged into the dev branch of ESPHome, but not yet in a release.
   # We've pinned them to their specific squash merge commit id for reproducable builds.
@@ -105,7 +68,6 @@ text_sensor:
 sendspin:
   id: sendspin_hub
   task_stack_in_psram: ${task_stack_in_psram}
-  kalman_process_error: 0.01
 
 media_source:
   - platform: sendspin
