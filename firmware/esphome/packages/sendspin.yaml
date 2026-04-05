@@ -72,9 +72,7 @@ sendspin:
 media_source:
   - platform: sendspin
     id: sendspin_source
-  - platform: http_request
-    id: http_source
-    buffer_size: 200000
+  
 
 media_player:
   - platform: sendspin
@@ -95,7 +93,6 @@ media_player:
       sample_rate: 48000
     volume_increment: 0.05
     sources:
-      - http_source
       - sendspin_source
 
     on_announcement:
